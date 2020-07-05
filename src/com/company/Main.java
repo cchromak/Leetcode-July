@@ -23,6 +23,13 @@ public class Main {
         WeekOne ugly = new WeekOne();
         System.out.println(ugly.nthUglyNumber(10));
 
+        // 5)
+        WeekOne bin = new WeekOne();
+        int xham = 1;
+        int yham = 4;
+
+        System.out.println(bin.hammingDistance(xham, yham));
+
 
 
     }
