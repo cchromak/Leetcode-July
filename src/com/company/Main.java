@@ -45,7 +45,12 @@ public class Main {
         int[] number = {9, 9, 9, 9, 9, 9};
         System.out.println(Arrays.toString(addDigit.plusOne(number)));
 
-
+        // 7)
+        System.out.println("-------------------------------");
+        System.out.println("Day 7");
+        int[][] island = {{0,1,1,0}, {0,1,1,0}, {0,1,1,0}, {0,1,1,0}};
+        WeekOne perm = new WeekOne();
+        System.out.println((perm.islandPerimeter(island)));
 
     }
 }
