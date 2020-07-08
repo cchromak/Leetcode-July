@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // 1)
+        /*// 1)
         System.out.println("-------------------------------");
         System.out.println("Day 1");
         WeekOne coin = new WeekOne();
@@ -50,7 +50,16 @@ public class Main {
         System.out.println("Day 7");
         int[][] island = {{0,1,1,0}, {0,1,1,0}, {0,1,1,0}, {0,1,1,0}};
         WeekOne perm = new WeekOne();
-        System.out.println((perm.islandPerimeter(island)));
+        System.out.println((perm.islandPerimeter(island)));*/
+
+        //8
+        System.out.println("-------------------------------");
+        System.out.println("Day 8");
+        int[] sumOfNumbers = {-1, -1, 0, 0, 0, 1, 2, -1, -4};
+        WeekTwo sum = new WeekTwo();
+        System.out.println(sum.threeSum(sumOfNumbers));
+
+
 
     }
 }
