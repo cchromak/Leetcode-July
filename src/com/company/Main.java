@@ -50,7 +50,7 @@ public class Main {
         System.out.println("Day 7");
         int[][] island = {{0,1,1,0}, {0,1,1,0}, {0,1,1,0}, {0,1,1,0}};
         WeekOne perm = new WeekOne();
-        System.out.println((perm.islandPerimeter(island)));*/
+        System.out.println((perm.islandPerimeter(island)));
 
         //8
         System.out.println("-------------------------------");
@@ -58,6 +58,41 @@ public class Main {
         int[] sumOfNumbers = {-1, -1, 0, 0, 0, 1, 2, -1, -4};
         WeekTwo sum = new WeekTwo();
         System.out.println(sum.threeSum(sumOfNumbers));
+
+        //9
+        System.out.println("-------------------------------");
+        System.out.println("Day 8");
+        WeekTwo binaryTreeWidth = new WeekTwo();
+        WeekTwo.TreeNode root = new WeekTwo.TreeNode(34);
+        root.left = new WeekTwo.TreeNode(12);
+        root.left.left = new WeekTwo.TreeNode(11);
+        root.right = new WeekTwo.TreeNode(78);
+        root.right.left = new WeekTwo.TreeNode(50);
+        System.out.println(binaryTreeWidth.widthOfBinaryTree(root));*/
+
+        //10
+        System.out.println("-------------------------------");
+        System.out.println("Day 10");
+        WeekTwo.Node head = new WeekTwo.Node(1, null, null, null);
+        WeekTwo.Node sec = new WeekTwo.Node(2, head, null, null);
+        head.next = sec;
+        WeekTwo.Node third = new WeekTwo.Node(3, sec, null, null);
+        sec.next = third;
+        WeekTwo.Node secondHead = new WeekTwo.Node(11, null, null, null);
+        third.child = secondHead;
+        WeekTwo.Node secondSec = new WeekTwo.Node(12, secondHead, null, null);
+        secondHead.next = secondSec;
+        WeekTwo.Node fourth = new WeekTwo.Node(4, third, null, null);
+        third.next = fourth;
+        WeekTwo flat = new WeekTwo();
+        WeekTwo.Node curr = flat.flatten(head);
+        while (curr != null) {
+            System.out.print(curr.val + "  ");
+            curr = curr.next;
+        }
+
+
+
 
 
 
