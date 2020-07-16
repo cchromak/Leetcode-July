@@ -187,4 +187,148 @@ public class WeekTwo {
             return head;
         }
 
+
+    /*11)
+    // Given a set of distinct integers, nums, return all possible subsets (the power set).
+
+    Note: The solution set must not contain duplicate subsets.
+
+    Example:
+
+    Input: nums = [1,2,3]
+    Output:
+            [
+            [3],
+            [1],
+            [2],
+            [1,2,3],
+            [1,3],
+            [2,3],
+            [1,2],
+            []
+            ]*/
+
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> subsets = new ArrayList<>();
+        generateSubsets(0, nums, new ArrayList<Integer>(), subsets);
+        return subsets;
+        }
+
+
+    public void generateSubsets(int index, int[] nums, List<Integer> current, List<List<Integer>> subsets){
+        subsets.add(new ArrayList<>(current));
+        for (int i = index; i < nums.length; i++) {
+            current.add(nums[i]);
+            generateSubsets( i + 1, nums, current, subsets);
+            current.remove(current.size() - 1);
+        }
+    }
+
+    /*  12)
+    Reverse bits of a given 32 bits unsigned integer.
+
+    Example 1:
+
+    Input: 00000010100101000001111010011100
+    Output: 00111001011110000010100101000000
+    Explanation: The input binary string 00000010100101000001111010011100 represents
+    the unsigned integer 43261596, so return 964*/
+
+
+    public int reverseBits(int n) {
+        int ans = 0;
+        for (int i = 0; i < 32; i++) {
+            ans <<= 1;
+            ans = ans | (n & 1);
+            n >>= 1;
+        }
+        return ans;
+    }
+
+    /* 13)
+    Given two binary trees, write a function to check if they are the same or not.
+
+    Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
+
+            Example 1:
+
+    Input:     1         1
+            / \       / \
+            2   3     2   3
+
+            [1,2,3],   [1,2,3]
+
+    Output: true
+    Example 2:
+
+    Input:   1         1
+            /           \
+            2            2
+
+            [1,2],     [1,null,2]
+
+    Output: false*/
+
+
+        public boolean isSameTree(TreeNode p, TreeNode q) {
+            if(p == null && q == null) {
+                return true;
+            } else if (p == null || q == null) {
+                return false;
+            }
+
+            if(p.val == q.val) {
+                return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+            } else {
+                return false;
+            }
+        }
+
+
+    /* 14)
+    Given two numbers, hour and minutes. Return the smaller angle (in degrees)
+    formed between the hour and the minute hand.
+
+
+
+    Example 1:
+
+
+
+    Input: hour = 12, minutes = 30
+    Output: 165*/
+
+    public double angleClock(int hour, int minutes) {
+
+        double hourLoc;
+        double minLoc;
+        double distanceA;
+        double distanceB;
+
+        minLoc = 360 * minutes / 60;
+
+        if (hour != 12) {
+            hourLoc =  30 * hour + 30.0 * minutes / 60;
+        } else {
+            hourLoc = 30.0 * minutes / 60;
+        }
+
+        if (hourLoc > minLoc) {
+            distanceA = hourLoc - minLoc;
+            distanceB = 360 - distanceA;
+        } else {
+            distanceA = minLoc - hourLoc;
+            distanceB = 360 - distanceA;
+        }
+
+        if (distanceA <= distanceB) {
+            return distanceA;
+        } else {
+            return distanceB;
+        }
+
+
+    }
+
+
 }

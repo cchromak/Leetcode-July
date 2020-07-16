@@ -68,7 +68,7 @@ public class Main {
         root.left.left = new WeekTwo.TreeNode(11);
         root.right = new WeekTwo.TreeNode(78);
         root.right.left = new WeekTwo.TreeNode(50);
-        System.out.println(binaryTreeWidth.widthOfBinaryTree(root));*/
+        System.out.println(binaryTreeWidth.widthOfBinaryTree(root));
 
         //10
         System.out.println("-------------------------------");
@@ -89,12 +89,49 @@ public class Main {
         while (curr != null) {
             System.out.print(curr.val + "  ");
             curr = curr.next;
-        }
+        }*/
+
+        // 11)
+        System.out.println("-------------------------------");
+        System.out.println("Day 11");
+        WeekTwo sub = new WeekTwo();
+        int[] subTest = {1, 2, 3, 4};
+        System.out.println(sub.subsets(subTest));
 
 
+        // 12)
+        System.out.println("-------------------------------");
+        System.out.println("Day 12");
 
+        WeekTwo bin = new WeekTwo();
+        int w2numb11 = 234523190;
+        System.out.println(bin.reverseBits(w2numb11));
 
+        // 13)
+        System.out.println("-------------------------------");
+        System.out.println("Day 13");
 
+        WeekTwo.TreeNode rootOne = new WeekTwo.TreeNode(34);  // creating first tree
+        rootOne.left = new WeekTwo.TreeNode(12);
+        rootOne.left.left = new WeekTwo.TreeNode(11);
+        rootOne.right = new WeekTwo.TreeNode(78);
+        rootOne.right.left = new WeekTwo.TreeNode(50);
+
+        WeekTwo.TreeNode rootTwo = new WeekTwo.TreeNode(34);  // creating second identical tree
+        rootTwo.left = new WeekTwo.TreeNode(12);
+        rootTwo.left.left = new WeekTwo.TreeNode(11);
+        rootTwo.right = new WeekTwo.TreeNode(78);
+        rootTwo.right.left = new WeekTwo.TreeNode(50);
+
+        WeekTwo same = new WeekTwo();
+        System.out.println(same.isSameTree(rootOne, rootTwo));
+
+        // 14)
+        System.out.println("-------------------------------");
+        System.out.println("Day 14");
+
+        WeekTwo clock = new WeekTwo();
+        System.out.println(clock.angleClock(6, 30));
 
     }
 }
